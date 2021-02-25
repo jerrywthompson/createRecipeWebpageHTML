@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <!-- Bootstrap core CSS -->
+        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Contact Form</title>
+</head>
+<body>
+<h2>Contact Us</h2>
+<p>Please fill in this form and send us.</p>
+<form action="test.php" method="post">
+<!--    <p>
+        <label for="inputRecipeName">Recipe Name:<sup>*</sup></label>
+        <input type="text" name="recipeName" id="inputRecipeName">
+    </p>-->
+    
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Recipe Name</span>
+        </div>
+        <input type="text" name="recipeName" id="inputRecipeName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    
+    
+    <p>
+        <label for="inputEmail">Email:<sup>*</sup></label>
+        <input type="text" name="email" id="inputEmail">
+    </p>
+    <p>
+        <label for="inputSubject">Subject:</label>
+        <input type="text" name="subject" id="inputSubject">
+    </p>
+    <p>
+        <label for="inputComment">Message:<sup>*</sup></label>
+        <textarea name="message" id="inputComment" rows="5" cols="30"></textarea>
+    </p>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Reset">
+</form>
+</body>
+</html>

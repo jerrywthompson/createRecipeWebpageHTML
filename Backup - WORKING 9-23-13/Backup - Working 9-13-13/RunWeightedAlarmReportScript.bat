@@ -1,0 +1,1 @@
+start chrome.exe http://localhost/weighted_alarm_measurement/weighted_alarm_measurement_PHP_Scripts/main.php
