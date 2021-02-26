@@ -6,14 +6,11 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.80.0">
-        <title>Starter Template · Bootstrap v5.0</title>
+        <title>Create Recipe Webpage</title>
 
-        <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
-
-
-
+        <link rel="stylesheet" href="css/main.css"/>
         <!-- Bootstrap core CSS -->
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
 
         <style>
             .bd-placeholder-img {
@@ -31,9 +28,6 @@
             }
         </style>
 
-
-        <!-- Custom styles for this template -->
-        <link href="starter-template.css" rel="stylesheet">
     </head>
     <body>
 
@@ -71,118 +65,99 @@
                 </div>
             </div>
         </nav>
-
-
-
         <div class="starter-template text-center py-5 px-3">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+            <h1>Create Recipe Webpage</h1>
         </div>
         <main class="container">
             <div class="input-section">
                 <fieldset class="form-group">
 
-                    <form action="test.php" method="post">
-                        <!-- Name input -->
-                        <div class="form-outline mb-4">
-                            <input type="text" name="recipeName" id="form4Example1" class="form-control" />
-                            <label class="form-label" for="form4Example1">Name</label>
-                        </div>
-
-                        <div class="input-group mb-4">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Recipe Name</span>
-                            </div>
-                            <input type="text" name="notes" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-                        </div>
-
+                    <form action="main.php" method="post">
                         <div class="form-control mb-4">
                             <div class="input-group-prepend mb-2">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Recipe Name</span>
                             </div>
-                            <input type="text" name="notes" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" name="recipeName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                         </div>
+                        
+                        <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
+                        <div class="form-control mb-4">
+                 
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Select Image</span>
+                            </div>    
+                            <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
+                        </div>
+                        
+
+                        <a href="uploadFile/index.html" class="btn btn-info" role="button">Link Button</a>
 
                         <div class="form-control mb-4">
-                            <div class="input-group-prepend mb-2">
+                            <div class="input-group-prepend mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Recipe Type</span>
                             </div>
-                            <div class="<div class="form-check">
-                              <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
-                                Display value
-                              </label>
-                            </div>">
-                                <label class="btn btn-outline-warning btn-lg">
+                            <div class="btn-toolbar row ml-2">
+                                <label class="btn btn-outline-warning btn-lg col-lg-3">
                                     <input type="radio" name="recipeType" id="appetizers" value="appetizers" autocomplete="off" > Appetizers
-                                </label>
-                                <label class="btn btn-outline-primary btn-lg">
+                                </label>                                
+                                <label class="btn btn-outline-primary btn-lg col-lg-3">
                                     <input type="radio" name="recipeType" id="main_course" value="main_course" autocomplete="off" checked> Main Course
                                 </label>
-                                <label class="btn btn-outline-success btn-lg">
+                                <label class="btn btn-outline-success btn-lg col-lg-3">
                                     <input type="radio" name="recipeType" id="desserts" value="desserts" autocomplete="off"> Desserts
                                 </label>
-                                <label class="btn btn-outline-info btn-lg">
+                                <label class="btn btn-outline-info btn-lg col-lg-3">
                                     <input type="radio" name="recipeType" id="cocktails" value="cocktails" autocomplete="off"> Cocktails
                                 </label>
                             </div>
                         </div>
-
                         <div class="form-control mb-4">
                             <div class="input-group-prepend mb-2">
                                 <span class="input-group-text">Instructions</span>
                             </div>
-                            <textarea class="form-control" name="instrucions" id="instrucions" rows="5"></textarea>
+                            <textarea class="form-control" name="instructions" id="instructions" rows="5"></textarea>
+                        </div>
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Ingredients</span>
+                            </div>
+                            <textarea class="form-control" name="ingredients" id="ingredients" rows="5"></textarea>
                         </div>
 
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <input type="email" id="form4Example2" class="form-control" />
-                            <label class="form-label" for="form4Example2">Email address</label>
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Notes</span>
+                            </div>
+                            <textarea class="form-control" name="notes" id="notes" rows="5"></textarea>
                         </div>
 
-                        <div class="form-outline mb-4">
-                            <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-                            <label class="form-label-prepend" >Additional information</label>
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Comments</span>
+                            </div>
+                            <textarea class="form-control" name="comments" id="comments" rows="5"></textarea>
                         </div>
 
-                        <div class="form-outline">
-                            <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
-                            <label class="form-label" for="textAreaExample">Message</label>
-                          </div>
-
-                        <!-- Message input -->
-                        <div class="form-outline mb-4">
-                            <textarea class="form-control" name="comments" id="form4Example3" rows="4"></textarea>
-                            <label class="form-label-prepend" for="form4Example3">Messagep</label>
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Nutrition</span>
+                            </div>
+                            <textarea class="form-control" name="nutrition" id="nutrition" rows="5"></textarea>
                         </div>
 
-                        <!-- Checkbox -->
-                        <div class="form-check d-flex justify-content-center mb-4">
-                            <input
-                                class="form-check-input me-2"
-                                type="checkbox"
-                                value=""
-                                id="form4Example4"
-                                checked
-                                />
-                            <label class="form-check-label" for="form4Example4">
-                                Send me a copy of this message
-                            </label>
-                        </div>
 
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
                     </form>
 
+                </fieldset>
 
 
 
 
+                <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-                    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
 
-
-                    </body>
-                    </html>
-                    <a href="../flask_db4/flaskblog/templates/create_post.html"></a>
+                </body>
+                </html>
+                <a href="../flask_db4/flaskblog/templates/create_post.html"></a>

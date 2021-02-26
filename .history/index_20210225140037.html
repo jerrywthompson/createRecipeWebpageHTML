@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+        <meta name="generator" content="Hugo 0.80.0">
+        <title>Create Recipe Webpage</title>
+
+        <link rel="stylesheet" href="css/main.css"/>
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap5/css/bootstrap.min.css" rel="stylesheet">
+
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+
+    </head>
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <div class="starter-template text-center py-5 px-3">
+            <h1>Create Recipe Webpage</h1>
+        </div>
+        <main class="container">
+            <div class="input-section">
+                <fieldset class="form-group">
+
+                    <form action="main.php" method="post">
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Recipe Name</span>
+                            </div>
+                            <input type="text" name="recipeName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        
+                        <input id="input-b1" name="input-b1" type="file" class="file" data-browse-on-zone-click="true">
+                        <div class="form-control mb-4">
+                 
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Select Image</span>
+                            </div>    
+                            <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
+                        </div>
+                        
+
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Recipe Type</span>
+                            </div>
+                            <div class="btn-toolbar row ml-2">
+                                <label class="btn btn-outline-warning btn-lg col-lg-3">
+                                    <input type="radio" name="recipeType" id="appetizers" value="appetizers" autocomplete="off" > Appetizers
+                                </label>                                
+                                <label class="btn btn-outline-primary btn-lg col-lg-3">
+                                    <input type="radio" name="recipeType" id="main_course" value="main_course" autocomplete="off" checked> Main Course
+                                </label>
+                                <label class="btn btn-outline-success btn-lg col-lg-3">
+                                    <input type="radio" name="recipeType" id="desserts" value="desserts" autocomplete="off"> Desserts
+                                </label>
+                                <label class="btn btn-outline-info btn-lg col-lg-3">
+                                    <input type="radio" name="recipeType" id="cocktails" value="cocktails" autocomplete="off"> Cocktails
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Instructions</span>
+                            </div>
+                            <textarea class="form-control" name="instructions" id="instructions" rows="5"></textarea>
+                        </div>
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Ingredients</span>
+                            </div>
+                            <textarea class="form-control" name="ingredients" id="ingredients" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Notes</span>
+                            </div>
+                            <textarea class="form-control" name="notes" id="notes" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Comments</span>
+                            </div>
+                            <textarea class="form-control" name="comments" id="comments" rows="5"></textarea>
+                        </div>
+
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-2">
+                                <span class="input-group-text">Nutrition</span>
+                            </div>
+                            <textarea class="form-control" name="nutrition" id="nutrition" rows="5"></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+                    </form>
+
+                </fieldset>
+
+
+
+
+                <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+                </body>
+                </html>
+                <a href="../flask_db4/flaskblog/templates/create_post.html"></a>

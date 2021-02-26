@@ -6,14 +6,12 @@
         <meta name="description" content="">
         <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
         <meta name="generator" content="Hugo 0.80.0">
-        <title>Starter Template · Bootstrap v5.0</title>
+        <title>Create Recipe Webpage</title>
 
-        <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/starter-template/">
-
-
-
+        <link rel="stylesheet" href="css/main.css"/>
         <!-- Bootstrap core CSS -->
-        <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="css/bootstrap5/css/bootstrap.min.css" >
+        <!-- <link rel="stylesheet" href="css/bootstrap-4.5.3/css/bootstrap.min.css"> -->
 
         <style>
             .bd-placeholder-img {
@@ -30,10 +28,22 @@
                 }
             }
         </style>
+        
+        
+                <script src= 
+"https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+                integrity= 
+"sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+                crossorigin="anonymous"></script> 
+        <script src= 
+"https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+                integrity= 
+"sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" 
+                crossorigin="anonymous"></script> 
+        
+        
+        
 
-
-        <!-- Custom styles for this template -->
-        <link href="starter-template.css" rel="stylesheet">
     </head>
     <body>
 
@@ -72,21 +82,145 @@
             </div>
         </nav>
         <div class="starter-template text-center py-5 px-3">
-            <h1>Bootstrap starter template</h1>
-            <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+            <h1>Create Recipe Webpage</h1>
         </div>
         <main class="container">
             <div class="input-section">
                 <fieldset class="form-group">
 
                     <form action="main.php" method="post">
+                        
+                        
+                         <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
+
                         <div class="form-control mb-4">
                             <div class="input-group-prepend mb-2">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Recipe Name</span>
                             </div>
-                            <input type="text" name="recipeName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+                            <input type="text" name="name" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
                         </div>
 
+                        <div class="form-control mb-4">
+                            <div class="input-group-prepend mb-3">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Image</span>
+                            </div>
+                            <input type="file" class="form-file-input" name="image_path" id="customFile">
+                            <label class="form-file-label" for="customFile">
+                              <!-- <span class="form-file-text">Choose a file...</span>
+                              <span class="form-file-button">Browse</span> -->
+                            </label>
+                        </div>
+                  
+                        
+<!--                        
+                        
+                        <div id="browse_app">
+                            <a class="btn btn-large btn-info" href="uploadFile/index.html/#uploadModal">Browse</a>
+                          </div>
+                                 
+     <button type="button" 
+                    class="btn btn-primary" 
+                    data-toggle="modal" 
+                    data-target="#exampleModal"> 
+                Launch demo modal 
+            </button> 
+  
+             Modal 
+            <div class="modal fade"
+                 id="exampleModal"> 
+                <div class="modal-dialog"> 
+                    <div class="modal-content"> 
+                        <div class="modal-header"> 
+                            <h5 class="modal-title"> 
+                              Modal title</h5> 
+                            <button type="button" 
+                                    class="close" 
+                                    data-dismiss="modal" 
+                                    aria-label="Close"> 
+                                <span aria-hidden="true"> 
+                                  ×</span> 
+                            </button> 
+                        </div> 
+                        <div class="modal-body"> 
+                            GeeksforGeeks 
+                        </div> 
+                        <div class="modal-footer"> 
+                            <button type="button"
+                                    class="btn btn-secondary" 
+                                    data-dismiss="modal"> 
+                              Close</button> 
+                            <button type="button" 
+                                    class="btn btn-primary"> 
+                              Save changes</button> 
+                        </div> 
+                    </div> 
+                </div> 
+            </div>           
+            
+            
+            
+            
+                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#uploadModal">Upload file</button>
+
+         Modal 
+        <div id="uploadModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+             Modal content
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">File upload form</h4>
+                </div>
+                <div class="modal-body">
+                     Form 
+                    <form method='post' action='' enctype="multipart/form-data">
+                        Select file : <input type='file' name='file' id='file' class='form-control' ><br>
+                        <input type='button' class='btn btn-info' value='Upload' id='btn_upload'>
+                    </form>
+
+                     Preview
+                    <div id='preview'></div>
+                </div>
+                
+            </div>
+
+          </div>
+        </div>
+
+         Script 
+        <script type='text/javascript'>
+        $(document).ready(function(){
+            $('#btn_upload').click(function(){
+
+                var fd = new FormData();
+                var files = $('#file')[0].files[0];
+                fd.append('file',files);
+
+                // AJAX request
+                $.ajax({
+                    url: 'ajaxfile.php',
+                    type: 'post',
+                    data: fd,
+                    contentType: false,
+                    processData: false,
+                    success: function(response){
+                        if(response != 0){
+                            // Show image preview
+                            $('#preview').append("<img src='"+response+"' width='100' height='100' style='display: inline-block;'>");
+                        }else{
+                            alert('file not uploaded');
+                        }
+                    }
+                });
+            });
+        });
+        </script>
+            
+            -->
+            
+            
+                        
                         <div class="form-control mb-4">
                             <div class="input-group-prepend mb-3">
                                 <span class="input-group-text" id="inputGroup-sizing-default">Recipe Type</span>
@@ -102,7 +236,7 @@
                                     <input type="radio" name="recipeType" id="desserts" value="desserts" autocomplete="off"> Desserts
                                 </label>
                                 <label class="btn btn-outline-info btn-lg col-lg-3">
-                                    <input type="radio" name="recipeType" id="cocktails" value="cocktails" autocomplete="off"> Cocktails
+                                    <input type="radio" name="type" id="cocktails" value="cocktails" autocomplete="off"> Cocktails
                                 </label>
                             </div>
                         </div>
@@ -140,18 +274,13 @@
                             <textarea class="form-control" name="nutrition" id="nutrition" rows="5"></textarea>
                         </div>
 
+
                         <!-- Submit button -->
                         <button type="submit" class="btn btn-primary btn-block mb-4">Send</button>
                     </form>
 
                 </fieldset>
 
-
-
-
-                <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-
                 </body>
                 </html>
-                <a href="../flask_db4/flaskblog/templates/create_post.html"></a>
+               

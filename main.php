@@ -1,40 +1,69 @@
 <?php
 
-include("echoOutput.php");
-include("sqlLight.php");
-
-$recipe = new stdClass;
-$recipe->name = $_POST["recipeName"];
-$recipe->type = $_POST["recipeType"];
-$recipe->instructions = $_POST["instructions"];
-$recipe->ingredients = $_POST["ingredients"];
-$recipe->notes = $_POST["notes"];
-$recipe->comments = $_POST["comments"];
-$recipe->nutrition = $_POST["nutrition"];
+include_once("echoOutput.php");
+include_once("Recipe.php");
+include_once("SQLLight3.php");
+include_once 'SQL.php';
 
 $dbFile = 'db/recipes.db';
 $db = new SQLite3($dbFile);
 
-//if (!file_exists($dbFile)) {
-    $response = createTable($db);
-//}
+$db = new SQLLight3();
+$sql = new SQL();
 
+$create_table_sql = $sql->create_recipe_table();
+$db->execute($create_table_sql);
+
+
+//
+//$db = new DB_Connect($dbFile);
+//funcEchoOutput($db);
+//funcEchoOutput($db->database);
+//funcEchoOutput($sql);
+//
+//
+//
+//funcEchoOutput($recipe);
+// This is a built into PHP.  A light weight DB which can use a file for a table
+//$db = new SQLite3($dbFile);
+//createTable($db);
+
+
+
+
+$recipe = new Recipe();
+
+//$recipe->image_path = "images/desserts.jpg";
+$recipe->image_path = "images/desserts.jpg";
 
 $ctr = 0;
-foreach($recipe as $key => $value) {
-    if ($ctr == 0){
-      $recipeData .= "'$value'";
-    } 
-    else { 
-        $recipeData .= ",'$value'" ;  
+foreach ($recipe as $key => $value) {
+    if ($ctr == 0) {
+        $recipeData .= "'$value'";
+    } else {
+        $recipeData .= ",'$value'";
     }
     $ctr += 1;
 }
 
-funcEchoOutput($recipeData);
 
-insert($db, $recipeData);
 
+
+
+$insert_recipe_sql = $sql->insert_recipe($recipeData);
+$db->execute($insert_recipe_sql);
+//insert($db, $recipeData);
+
+$get_all_recipes = $sql->get_all_recipes();
+echo $get_all_recipes;
+
+$db->query($get_all_recipes);
+
+
+//query($db, "SELECT * from recipe;");
+
+
+include("recipeTemplate.php");
 
 //
 //funcEchoOutput($ids);
@@ -58,4 +87,9 @@ insert($db, $recipeData);
 //funcEchoOutput($ingredients);
 //funcEchoOutput($notes);
 //funcEchoOutput($comments);
+
+
+
+
+$db->close();
 ?>
