@@ -4,9 +4,10 @@ include_once("echoOutput.php");
 include_once("Recipe.php");
 include_once("SQLLight3.php");
 include_once 'SQL.php';
+include_once 'FormatData.php';
 
-$dbFile = 'db/recipes.db';
-$db = new SQLite3($dbFile);
+//$dbFile = 'db/recipes.db';
+//$db = new SQLite3($dbFile);
 
 $db = new SQLLight3();
 $sql = new SQL();
@@ -28,13 +29,32 @@ $db->execute($create_table_sql);
 //$db = new SQLite3($dbFile);
 //createTable($db);
 
-
-
-
 $recipe = new Recipe();
 
-//$recipe->image_path = "images/desserts.jpg";
-$recipe->image_path = "images/desserts.jpg";
+//$recipe = $recipe->test_data();
+//
+//echo "herereere";
+//funcEchoOutput($recipe);
+
+
+//$recipe->instructions;
+//$recipe->ingredients;
+//$recipe->notes;
+//$recipe->comments;
+//$recipe->nutrition;
+
+
+
+$formatData = new FormatData();
+
+$recipe->instructions = $formatData->list($recipe->instructions);
+$recipe->ingredients = $formatData->list($recipe->ingredients);
+$recipe->notes = $formatData->list($recipe->notes);
+$recipe->comments = $formatData->list($recipe->comments);
+$recipe->nutrition = $formatData->list($recipe->nutrition);
+
+funcEchoOutput($formatedList);
+
 
 $ctr = 0;
 foreach ($recipe as $key => $value) {
@@ -48,16 +68,16 @@ foreach ($recipe as $key => $value) {
 
 
 
-
-
 $insert_recipe_sql = $sql->insert_recipe($recipeData);
 $db->execute($insert_recipe_sql);
 //insert($db, $recipeData);
 
 $get_all_recipes = $sql->get_all_recipes();
-echo $get_all_recipes;
-
 $db->query($get_all_recipes);
+
+
+
+
 
 
 //query($db, "SELECT * from recipe;");

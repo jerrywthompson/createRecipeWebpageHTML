@@ -9,7 +9,7 @@
         .header { grid-area: header; 
             width: 100%;
             padding: 10px;
-            background-image: url("<?=$recipe->image?>");
+            background-image: url("images/<?=$recipe->image?>");
             height: 100px;
             background-position: center;
             background-size: cover;

@@ -31,7 +31,7 @@
                         Select file : <input type='file' name='file' id='file' class='form-control' ><br>
                         <input type='button' class='btn btn-info' value='Upload' id='btn_upload'>
                     </form>
-
+                    <a href="../indexGOOD.html" class="btn btn-info" role="button">Close</a>
                     <!-- Preview-->
                     <div id='preview'></div>
                 </div>
@@ -52,7 +52,7 @@
 
                 // AJAX request
                 $.ajax({
-                    url: 'ajaxfile.php',
+                    url: 'get_image_file.php',
                     type: 'post',
                     data: fd,
                     contentType: false,

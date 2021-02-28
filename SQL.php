@@ -2,12 +2,7 @@
 
 class SQL {
 
-    public $data;
-    public $create_recipe_table;
-    public $insert_recipe;
-    public $update_recipe;
-    public $delete_recipe;
-    public $query_recipe;
+
 
 //    function __construct($data) {
 //        $this->data = $data;
@@ -19,7 +14,7 @@ class SQL {
         CREATE TABLE if not exists RECIPES (
             ID               INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             NAME             TEXT    NOT NULL,
-            IMAGE_PATH       TEXT,
+            IMAGE            TEXT    NOT NULL,
             TYPE             TEXT    NOT NULL,
             INSTRUCTIONS     TEXT    NOT NULL,
             INGREDIENTS      TEXT    NOT NULL,
@@ -34,7 +29,7 @@ class SQL {
     function insert_recipe($data) {
         $sql = "
             INSERT INTO RECIPES (
-            ID, NAME, TYPE, IMAGE_PATH, INSTRUCTIONS, INGREDIENTS, NOTES, 
+            ID, NAME, IMAGE, TYPE, INSTRUCTIONS, INGREDIENTS, NOTES, 
             COMMENTS, NUTRITION) 
             VALUES (NULL, $data)";
 

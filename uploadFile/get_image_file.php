@@ -4,7 +4,7 @@
 $filename = $_FILES['file']['name'];
 
 // Location
-$location = 'upload/'.$filename;
+$location = '../images/'.$filename;
 
 // file extension
 $file_extension = pathinfo($location, PATHINFO_EXTENSION);
